@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalkulatorSerwisuIT.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="15"
+                             Spacing="12"
+                             HorizontalOptions="Center">
+
+            <Border StrokeShape="RoundRectangle 8">
+                <Label Text="Kalkulator Zleceń Serwisowych"
+                       BackgroundColor="#004D40"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       Padding="3"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+            </Border>
+
+            <Label Text="Dane klienta"
+                   FontAttributes="Bold"/>
+            <Entry x:Name="entryImie"
+                   Placeholder="Imię i nazwisko lub telefon klienta"/>
+            <Entry x:Name="entryModel"
+                   Placeholder="Model urządzenia (np. laptop, PC)"/>
+
+            <Label Text="Usługa bazowa"
+                   FontAttributes="Bold"/>
+            <RadioButton x:Name="radioDiagnostyka"
+                         Content="Diagnostyka i czyszczenie układu chłodzenia (100 zł)"
+                         IsChecked="True"
+                         GroupName="Uslugi"/>
+            <RadioButton x:Name="radioInstalacja"
+                         Content="Instalacja i konfiguracja systemu OS (150 zł)"
+                         IsChecked="False"
+                         GroupName="Uslugi"/>
+            <RadioButton x:Name="radioNaprawa"
+                         Content="Naprawa płyty głównej / lutowanie (250 zł)"
+                         IsChecked="False"
+                         GroupName="Uslugi"/>
+
+            <Label Text="Opcje dodatkowe"
+                   FontAttributes="Bold"/>
+            <HorizontalStackLayout>
+                <CheckBox x:Name="checkBoxKopia"/>
+                <Label Text="Kopia zapasowa danych (+80 zł)"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <CheckBox x:Name="checkBoxPasta"/>
+                <Label Text="Wymiana pasty na termoprzewodzącą premium (+40 zł)"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Switch x:Name="switchEkspres"/>
+                <Label Text="Usługa ekspresowa w 24h (+50% do sumy)"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Kod rabatowy"
+                   FontAttributes="Bold"/>
+            <Entry x:Name="entryRabat"
+                   Placeholder="Wpisz kod rabatowy (np. TECHNIK10)"/>
+
+            <Grid ColumnDefinitions="*, *">
+                <Button Text="Oblicz i podsumuj"
+                        Grid.Column="0"
+                        BackgroundColor="#00796B"
+                        TextColor="White"
+                        CornerRadius="8"
+                        Margin="0, 0, 3, 0"
+                        Clicked="ObliczPodsumuj"/>
+                <Button Text="Wyczyść formularz"
+                        Grid.Column="1"
+                        BackgroundColor="#757575"
+                        TextColor="White"
+                        CornerRadius="8"
+                        Margin="3, 0, 0, 0"
+                        Clicked="WyczyscFormularz"/>
+            </Grid>
+
+            <Border BackgroundColor="White"
+                    Stroke="#004D4D"
+                    Padding="15, 5">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="Podsumowanie zlecenia"
+                           FontAttributes="Bold"
+                           FontSize="18"/>
+                    <Label x:Name="lblPodsumowanie"
+                           Text="Wprowadź dane i kliknij Oblicz..."
+                           Margin="0, 5"/>
+                    <Button Text="Zatwierdź zlecenie"
+                            BackgroundColor="#2E7D32"
+                            TextColor="White"
+                            CornerRadius="5"
+                            Clicked="ZatwierdzZamowienie"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="White"
+                    Stroke="Black"
+                    StrokeThickness="1">
+                    <Label Text="Miejsce na reklame"
+                           HorizontalOptions="Center"/>
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
