@@ -4,6 +4,7 @@
              x:Class="KalkulatorSerwisuIT.MainPage"
              Shell.NavBarIsVisible="False">
 
+<!-- Bartosz Syldatk, Jakub Gruszczyński, Adrian Jendrzejczak -->
     <ScrollView>
 
         <VerticalStackLayout Padding="15"
